@@ -134,14 +134,14 @@ namespace assignment {
   void print_kth_elements(int *arr, int length, int k, std::ostream &os) {
 
       if (arr == nullptr || length <= 0) {
-          os << "Invalid argument: arr\\n";
+          os << "Invalid argument: arr\n";
       }
       else if (k <= 0) {
-          os << "Invalid argument: length\\n";
+          os << "Invalid argument: length\n";
       }
       else {
           for (int i = 0; i < length; i += k) {
-              os << arr[i] << ' ';
+              os << arr[i] << '\t';
           }
       }
 
