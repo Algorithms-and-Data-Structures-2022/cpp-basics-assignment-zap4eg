@@ -37,8 +37,8 @@ namespace assignment {
     }
 
     int* k = left;
-    left = right;
-    right = k;
+    *left = *right;
+    *right = *k;
 
   }
 
@@ -46,7 +46,7 @@ namespace assignment {
   int arr_sum(int *arr, int length) {
 
     if (arr != nullptr) {
-        long long s = 0;
+        int s = 0;
         for (int i = 0; i < length; i++)
             s += arr[i];
         return s;
