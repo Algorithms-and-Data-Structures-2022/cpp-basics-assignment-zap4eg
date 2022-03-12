@@ -9,11 +9,9 @@ namespace assignment {
   int squared_diff(int left, int right) {
 
     if (left * left - right * right)
-        std::cout << left * left - right * right;
+        return left * left - right * right;
     else
-        std::cout << right * right - left * left;
-
-    return 0;
+        return right * right - left * left;
   }
 
   // Task 2
@@ -133,11 +131,14 @@ namespace assignment {
   // Task 9
   void print_kth_elements(int *arr, int length, int k, std::ostream &os) {
 
-      if (arr == nullptr || length <= 0) {
+      if (arr == nullptr) {
           os << "Invalid argument: arr\n";
       }
-      else if (k <= 0) {
+      else if (length <= 0) {
           os << "Invalid argument: length\n";
+      }
+      else if (k <= 0) {
+          os << "Invalid argument: k\n";
       }
       else {
           for (int i = 0; i < length; i += k) {
