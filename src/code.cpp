@@ -8,7 +8,7 @@ namespace assignment {
   // Task 1
   int squared_diff(int left, int right) {
 
-    return std::abs(left * left - right * right);
+    return (left * left - right * right) * (left * left - right * right);
 
   }
 
@@ -36,7 +36,9 @@ namespace assignment {
         return;
     }
 
-    std::swap(left, right);
+    int* k = left;
+    left = right;
+    right = k;
 
   }
 
@@ -73,7 +75,7 @@ namespace assignment {
   int *allocate_arr(int length, int init_value) {
 
     if (length > 0) {
-        int a[length];
+        int* a = new int[length];
         std::fill(a, a + length, init_value);
         return a;
     }
@@ -85,7 +87,7 @@ namespace assignment {
   int *clone_arr(int *arr_in, int length) {
 
       if (arr_in != nullptr && length > 0) {
-          int new_arr[length];
+          int* new_arr = new int[length];
           std::copy(arr_in, arr_in + length, new_arr);
           return new_arr;
       }
