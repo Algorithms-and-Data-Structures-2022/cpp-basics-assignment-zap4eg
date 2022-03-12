@@ -8,17 +8,14 @@ namespace assignment {
   // Task 1
   int squared_diff(int left, int right) {
 
-    if (left * left - right * right)
-        return left * left - right * right;
-    else
-        return right * right - left * left;
+    return std::abs(left * left - right * right);
+
   }
 
   // Task 2
   bool check_bit(int mask, int bit_pos) {
 
-    if (mask >= 0 && bit_pos >= 0) {
-        std::cout << ((1 << bit_pos) & mask);
+    if (mask >= 0 && bit_pos >= 0 && ((1 << bit_pos) & mask)) {
         return true;
     }
 
@@ -28,30 +25,18 @@ namespace assignment {
   // Task 3
   int max3(int left, int middle, int right) {
 
-    std::cout << std::max(std::max(left, middle), right);
+    return std::max(std::max(left, middle), right);
 
-    return 0;
   }
 
   // Task 4
   void swap_args(int *left, int *right) {
 
     if (left == nullptr || right == nullptr) {
-        std::cout << "left = ";
-        if (left == nullptr) {
-            std::cout << "nullptr, ";
-        }
-        else {
-            std::cout << left << ", ";
-        }
-        std::cout << "right = ";
-        if (left == nullptr) {
-            std::cout << "nullptr";
-        }
-        else {
-            std::cout << right;
-        }
+        return;
     }
+
+    std::swap(left, right);
 
   }
 
@@ -62,10 +47,7 @@ namespace assignment {
         long long s = 0;
         for (int i = 0; i < length; i++)
             s += arr[i];
-        std::cout << s;
-    }
-    else {
-        std::cout << 0;
+        return s;
     }
 
     return 0;
@@ -81,10 +63,7 @@ namespace assignment {
                 j = i;
             }
         }
-        std::cout << arr + j;
-    }
-    else {
-        std::cout << "nullptr";
+        return arr + j;
     }
 
     return nullptr;
@@ -96,14 +75,7 @@ namespace assignment {
     if (length > 0) {
         int a[length];
         std::fill(a, a + length, init_value);
-        std::cout << '[';
-        for (int i = 0; i < length - 1; i++) {
-            std::cout << a[i] << ", ";
-        }
-        std::cout << a[length - 1] << ']';
-    }
-    else {
-        std::cout << "nullptr";
+        return a;
     }
 
     return nullptr;
@@ -115,17 +87,10 @@ namespace assignment {
       if (arr_in != nullptr && length > 0) {
           int new_arr[length];
           std::copy(arr_in, arr_in + length, new_arr);
-          std::cout << '[';
-          for (int i = 0; i < length - 1; i++) {
-              std::cout << new_arr[i] << ", ";
-          }
-          std::cout << new_arr[length - 1] << ']';
-      }
-      else {
-          std::cout << "nullptr";
+          return new_arr;
       }
 
-    return nullptr;
+      return nullptr;
   }
 
   // Task 9
