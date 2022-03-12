@@ -8,7 +8,7 @@ namespace assignment {
   // Task 1
   int squared_diff(int left, int right) {
 
-    return (left * left - right * right) * (left * left - right * right);
+    return (left - right) * (left - right);
 
   }
 
@@ -36,9 +36,9 @@ namespace assignment {
         return;
     }
 
-    int* k = left;
+    int k = *left;
     *left = *right;
-    *right = *k;
+    *right = k;
 
   }
 
